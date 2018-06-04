@@ -17,7 +17,7 @@ module OmniAuth
         token_url: '/oauth/token'
       }
 
-      uid { extra.raw_info['id'] }
+      uid { raw_info['username'] + '@' + options.domain }
 
       info do
         {
@@ -87,6 +87,7 @@ module OmniAuth
         options.client_options[:site] = "https://#{domain}"
         options.client_id             = client_id
         options.client_secret         = client_secret
+        options.domain                = domain
       end
     end
   end
