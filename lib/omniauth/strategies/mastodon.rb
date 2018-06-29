@@ -61,7 +61,7 @@ module OmniAuth
 
       def get_identifier
         form = OmniAuth::Form.new(title: 'Mastodon Login')
-        form.text_field 'Your full Mastodon identifier (username@domain)', 'identifier'
+        form.text_field 'マストドンアカウントと連携してログインします。 「ユーザー名@mimumedon.com」の形式で入力してください 例：mimumedon@mimumedon.com', 'identifier'
         form.button 'Login'
         form.to_response
       end
